@@ -26,6 +26,7 @@ _This is what I'm building towards in 2025, and this project is the first step i
 ### 3. Product That Serves Real World
 - A viable candidate for junior roles
 - Introduces ML Ops and infrastructure i.e. how will I make a self-contained cardboard box that will be delivered to someone else's address and magically unfold into a big-screen TV without the receiver needing to modify parts or even assemble anything
+- May include Docker containers
 
 _This is probably my ceiling given my professional goals, abilities, personality and opportunities_
 
@@ -56,21 +57,38 @@ Is king-side any different from queen-side castling? Do players who castle have 
 
 
 
-## B. Project Components
+## B. Project Components, Design, and Tradeoffs
 ### 1. Data Retrieval
+#### a. Chess.com Players' IDs
 From the Chess.com API
+
+#### b. Chess Match ID's
+From the Chess.com API
+
+#### c. Move History
+
+#### D. Board Position
+Evaluated 12 steps deep by Stockfish chess evaluation engine
+
+
 
 ### 2. Data Storage
 Inside a SQLite database
 
 ### 3. Data Preparation - Feature Engineering
+#### a. On moves
+- By piece, with the understanding that castling is a king-oriented move
+- By castling
+- By piece
+#### b. Board States
+- 4 minors off their start squares
+- rooks achieve connection connected
+- castling status
 
 ### 4. Statistical Modeling
 
 ### 5. Insights
 
 
-
 # III. Major Learnings:
-### 1. Data
-asdfgasdf
+
