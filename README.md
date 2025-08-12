@@ -1,5 +1,5 @@
 # I. Author's Context
-## A. Professional(Non-Technical) Background
+## A. Professional (Non-Technical) Background
 I've held leadership roles in numerous VC-backed tech startups, but:
   - they were all __business__ roles (finance, COO, product)
   - I have no CS degree
@@ -12,22 +12,22 @@ I've held leadership roles in numerous VC-backed tech startups, but:
 - Analysis is done in a single Jupyter notebook
 - Minimal feature engineering
 
-_This was me in 2024_
+_This was me in 2024_![graduation_cap.svg](readme_media%2Fgraduation_cap.svg)
+
+<img src="readme_media/graduation_cap.svg" width="64" alt="Graduated" />
 
 ### 2. Structured Toys
 - Maybe interview-ready, but never an employer's best choice
 - Introduces data engineering challenges: messy, incomplete, or imbalanced data coming from multiple sources
 - Code has been broken down so each file/notebook has a segregated task
 - Modeling may go beyond the basics
-- Project lives on my laptop i.e. cannot be used by another team member, let alone plugged into a live product
+- Cannot be used by another team member, let alone plugged into a live product i.e. it's living on my laptop
 
 _This is what I'm building towards in 2025, and this project is the first step in the progression from 1 to 2_
 
 ### 3. Product That Serves Real World
 - A viable candidate for junior roles
-- Introduces ML Ops and infrastructure i.e. how will I make a self-contained cardboard box that will be delivered to someone else's address and magically unfold into a big-screen TV without the receiver needing to modify parts or even assemble anything
-- May include Docker containers
-
+- Introduces ML Ops and infrastructure i.e. how will I make a self-contained cardboard box (e.g. Docker) that will be delivered to someone else's address and magically unfold into a big-screen TV without the receiver needing to modify parts or even assemble anything
 _This is probably my ceiling given my professional goals, abilities, personality and opportunities_
 
 ### 4. Product That Serves Real World At Scale
@@ -44,7 +44,7 @@ A level-2 applied Machine Learning project centered around chess.
 The chess engine uses a "centipawn evaluation" e.g. if we're at +2.0 White, it means "White is ahead in material and position such that it has 2 extra pawns in a vacuum." I want to know how many points (or pawns) do I need to be before I can say I have an 80% chance of winning?
 
 ### 2. Inflection Timing
-And in relation to the question above, when does that typically happen? On move #17 in an average game of 40 moves? Is there a moment where the board position is a better predictor of who will win than the players' ELO ratings?
+And in relation to the question above, when does that typically happen? On move #17 in an average game of 40 moves? Is there a moment where the board position is a better predictor of who will win than the players' Elo ratings?
 
 ### 3. Minor and Major Piece Development
 How predictive is it, if at all, that the person who gets their knights and bishops off the starting spaces for predicting a winner?
@@ -67,7 +67,7 @@ From the Chess.com API
 
 #### c. Move History
 
-#### D. Board Position
+#### d. Board Position
 Evaluated 12 steps deep by Stockfish chess evaluation engine
 
 
