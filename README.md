@@ -38,7 +38,7 @@ I've held leadership roles in numerous VC-backed tech startups, but:
 # II. What is This?
 A level-2 applied Machine Learning project centered around chess.
 
-## A. Burning Questions
+## A. Burning Questions Inspiring This Project
 ### 1. Inflection Point
 The chess engine uses a "centipawn evaluation" e.g. if we're at +2.0 White, it means "White is ahead in material and position such that it has 2 extra pawns in a vacuum." I want to know how many points (or pawns) do I need to be before I can say I have an 80% chance of winning?
 
@@ -92,7 +92,7 @@ Inside a SQLite database
 ## A. SQLite vs. Postgres
 ### 1. Arguments for SQLite
 - Self-contained in a single file, which is portable i.e. I can move it to a public GitHub repo without worrying about transferring environment variables via Docker
-- Skips role management setup
+- Skips role management setup and credential management for people who don't exist
 
 ### 2. Arguments for Postgres
 - Avoids the performance issues of having a single file open to 1 user for 1 process at time (concurrency)
