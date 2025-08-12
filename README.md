@@ -6,13 +6,13 @@ I've held leadership roles in numerous VC-backed tech startups, but:
   - have never undergone a coding bootcamp
 
 ## B. Roadmap For 5 Levels of Applied ML Skill Development
-### 1. Notebook Toys :white_check_mark:
+### 1. Notebook Toys
 - For upskilling and undergrad, not for paid engineering work
 - Data is handed to me as a clean and complete CSV download on a silver platter (via Kaggle)
 - Analysis is done in a single Jupyter notebook
 - Minimal feature engineering
 
-_This was me in 2024_<img src="readme_media/graduation_cap.svg" width="24" alt="Graduated" />
+**_Entered in 2024, and built up reps in 2025_** :white_check_mark:
 
 ### 2. Structured Toys
 - Maybe interview-ready, but never an employer's best choice
@@ -21,12 +21,13 @@ _This was me in 2024_<img src="readme_media/graduation_cap.svg" width="24" alt="
 - Modeling may go beyond the basics
 - Cannot be used by another team member, let alone plugged into a live product i.e. it's living on my laptop
 
-_This is what I'm building towards in 2025, and this project is the first step in the progression from 1 to 2_
+**_What I'm transitioning towards in 2025, and this project is the first step in the progression from 1 to 2_** :hourglass_flowing_sand:
 
 ### 3. Product That Serves Real World
 - A viable candidate for junior roles
 - Introduces ML Ops and infrastructure i.e. how will I make a self-contained cardboard box (e.g. Docker) that will be delivered to someone else's address and magically unfold into a big-screen TV without the receiver needing to modify parts or even assemble anything
-_This is probably my ceiling given my professional goals, abilities, personality and opportunities_
+
+- **_This is probably my ceiling given my professional goals, abilities, personality and opportunities. I wouldn't creep into this until 2026._** :x:
 
 ### 4. Product That Serves Real World At Scale
 - Appropriate for senior engineers or getting things done at scale in Big Tech
@@ -89,4 +90,6 @@ Inside a SQLite database
 
 
 # III. Major Learnings:
+
+# IV. Quick-Start Guide:
 
