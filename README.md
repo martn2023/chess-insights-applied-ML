@@ -7,10 +7,12 @@ I've held leadership roles in numerous VC-backed tech startups, but:
 
 ## B. Roadmap For 5 Levels of Applied ML Skill Development
 ### 1. Notebook Toys
-- Appropriate for students, not interview-ready
+- For upskilling and undergrad, not for paid engineering work
 - Data is handed to me as a clean and complete CSV download on a silver platter (via Kaggle)
 - Analysis is done in a single Jupyter notebook
 - Minimal feature engineering
+
+_This was me in 2024_
 
 ### 2. Structured Toys
 - Maybe interview-ready, but never an employer's best choice
@@ -19,9 +21,13 @@ I've held leadership roles in numerous VC-backed tech startups, but:
 - Modeling may go beyond the basics
 - Project lives on my laptop i.e. cannot be used by another team member, let alone plugged into a live product
 
+_This is what I'm building towards in 2025, and this project is the first step in the progression from 1 to 2_
+
 ### 3. Product That Serves Real World
 - A viable candidate for junior roles
 - Introduces ML Ops and infrastructure i.e. how will I make a self-contained cardboard box that will be delivered to someone else's address and magically unfold into a big-screen TV without the receiver needing to modify parts or even assemble anything
+
+_This is probably my ceiling given my professional goals, abilities, personality and opportunities_
 
 ### 4. Product That Serves Real World At Scale
 - Appropriate for senior engineers or getting things done at scale in Big Tech
@@ -58,32 +64,13 @@ From the Chess.com API
 Inside a SQLite database
 
 ### 3. Data Preparation - Feature Engineering
-**Inflection**: a
+
+### 4. Statistical Modeling
+
+### 5. Insights
 
 
-### 4. Data Retrieval
-
-
-- adsf
-- adfs
-
-
-
-### How to Use
-See the 5 Jupyter notebooks to the left
 
 # III. Major Learnings:
-#### Data Availability
-- It took way longer than I expected to find a suitable data set to work with. There were data sets with mystery titles, had zero documentation on what the feature labels, had too many blank values which nullified their use(no pun intended but seemingly forced), or the row count was too small support a meaningful analysis (particularly dangerous for Stacking)
-
-- Sometimes the data you want isn't all in one source, and maybe it's possible to do a join, but then there's issues where anonymized data (like COVID or financial) prevents you from linking data sets
-
-#### Off-Loading the Heavy Math Responsibilities
-- It's astounding how far a novice can go with Scikit-learn doing the heavy lifting on math. Yes, I'm aware a human judgment and domain experience are needed for matters like feature engineering, feature elimination, and explainability. But I can see that you don't need to be a wizard inc college-level Calculus or Stats classes to get the general direction
-
-#### Complaints Over Geron's Level and Other Teaching Materials On Social Media
-- This book was recommended to me by someone who likely overestimated my starting point, and it didn't work for me that Geron just jumped right into the material without explaining the taxonomy like I did in my first notebook. I'm committed to finishing this out as a matter of self-discipline, but if I was to advise my younger self, I would have started with something easier before this textbook. Maybe if I 
-   mprovements:
-#### Sample Data Choices
-- If I was to do this again, I would have picked a use case with 100K-500K rows, not 30K.
-- I also realize in hindsight that the entire use case, while having some value, is somewhere between a leading and lagging indicator. From a strategic standpoint, I'd want a LEADING indicator. I would want to know who is going to be a deadbeat credit card holder when they apply for the credit card, NOT after +6 months of spending. Or maybe look at a patient profile of healthy people and predict who is going to die of COVID. Or a neat one would be looking at a data on prisoners to see who is likely to re-offend violently if we let them out.
+### 1. Data
+asdfgasdf
