@@ -1,0 +1,14 @@
+from stockfish import Stockfish
+
+stockfish = Stockfish(path="engines/stockfish/stockfish.exe")
+
+# Sample board position (from your earlier game)
+fen = "8/p2n4/1p3k2/8/2KP1BR1/2P5/PP6/8 b - - 0 45"
+
+# Set the position
+stockfish.set_fen_position(fen)
+
+# Get evaluation
+evaluation = stockfish.get_evaluation()
+
+print("📌 Evaluation:", evaluation)
