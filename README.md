@@ -6,13 +6,13 @@ I've held leadership roles in numerous VC-backed tech startups, but:
   - have never undergone a coding bootcamp
 
 ## B. Roadmap For 5 Levels of Applied ML Skill Development
-### 1. Notebook Toys
+### 1. Notebook Toys :white_check_mark:
 - For upskilling and undergrad, not for paid engineering work
 - Data is handed to me as a clean and complete CSV download on a silver platter (via Kaggle)
 - Analysis is done in a single Jupyter notebook
 - Minimal feature engineering
 
-_This was me in 2024_<img src="readme_media/graduation_cap.svg" width="48" alt="Graduated" />
+_This was me in 2024_<img src="readme_media/graduation_cap.svg" width="24" alt="Graduated" />
 
 ### 2. Structured Toys
 - Maybe interview-ready, but never an employer's best choice
