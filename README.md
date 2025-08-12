@@ -12,9 +12,7 @@ I've held leadership roles in numerous VC-backed tech startups, but:
 - Analysis is done in a single Jupyter notebook
 - Minimal feature engineering
 
-_This was me in 2024_![graduation_cap.svg](readme_media%2Fgraduation_cap.svg)
-
-<img src="readme_media/graduation_cap.svg" width="64" alt="Graduated" />
+_This was me in 2024_<img src="readme_media/graduation_cap.svg" width="48" alt="Graduated" />
 
 ### 2. Structured Toys
 - Maybe interview-ready, but never an employer's best choice
