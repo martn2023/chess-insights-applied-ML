@@ -16,7 +16,7 @@ I've held leadership roles in numerous VC-backed tech startups, but:
 
 ### 2. Structured Toys
 - Maybe interview-ready, but never an employer's best choice
-- Introduces data engineering challenges: messy, incomplete, or imbalanced data coming from multiple sources
+- Introduces data engineering challenges: messy, incomplete, or imbalanced data, possibly coming from multiple sources
 - Code has been broken down so each file/notebook has a segregated task
 - Modeling may go beyond the basics
 - Cannot be used by another team member, let alone plugged into a live product i.e. it's living on my laptop
@@ -56,7 +56,7 @@ Is king-side any different from queen-side castling? Do players who castle have 
 
 
 
-## B. Project Components, Design, and Tradeoffs
+## B. Project Components and Design
 ### 1. Data Retrieval
 #### a. Chess.com Players' IDs
 From the Chess.com API
@@ -88,8 +88,20 @@ Inside a SQLite database
 
 ### 5. Insights
 
+# III. Tradeoffs and Rationale
+## A. SQLite vs. Postgres
+### 1. Arguments for SQLite
+- Self-contained in a single file, which is portable i.e. I can move it to a public GitHub repo without worrying about transferring environment variables via Docker
+- Skips role management setup
 
-# III. Major Learnings:
+### 2. Arguments for Postgres
+- Avoids the performance issues of having a single file open to 1 user for 1 process at time (concurrency)
+- Has more sophisticated user management abilities
+- Better scalability potential if the data size surpasses 
 
-# IV. Quick-Start Guide:
+Postgres' advantages are only relevant when there's multiple consumers attacking this or multiple team members working on this at once. While I'm eager to level up my engineering skills, picking Postgres for **this project feels like "Engineering Theater"**.
+
+# IV. Major Learnings
+
+# V. Quick-Start Guide
 
