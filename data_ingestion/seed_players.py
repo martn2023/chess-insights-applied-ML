@@ -1,11 +1,18 @@
 from get_montly_game_history_by_username import fetch_games_for_month
+import sqlite3
+import os
+
+# SQLite db file should NOT be in this folder, should be one level up in the root
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+db_path = os.path.join(project_root, "chess_insights.sqlite")
+
+conn = sqlite3.connect(db_path)
+cursor = conn.cursor()
 
 #I wanted to plant random 5 seeds at different Elo levels and watch them spread out via BFS
 seed_players_list = [
 
     "SvAlpha", #800s
-    "Suzy-HL202", #500s
-    "zakumeng", #1400s
     "Yashk05", #2000s
     "magnuscarlsen" #3300s
 ]
@@ -13,7 +20,7 @@ seed_players_list = [
 archive_year = 2025
 archive_month = 7
 
-initial_pull_per_seed = 100000
+initial_pull_per_seed = 50000
 
 from collections import deque
 
@@ -66,3 +73,16 @@ def bfs_player_crawl(seed_players, year, month, max_players):
     return players_seen_set
 
 make_players = bfs_player_crawl(seed_players_list, archive_year, archive_month, initial_pull_per_seed)
+
+
+
+for username in make_players:
+    try:
+        cursor.execute("INSERT OR IGNORE INTO players (username) VALUES (?)", (username,))
+    except Exception as e:
+        print(f"Error inserting {username}: {e}")
+
+conn.commit()
+conn.close()
+
+print("✅ All players inserted into 'players' table.")
