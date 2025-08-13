@@ -23,7 +23,7 @@ def fetch_profile(username):
         #print(response)
         if response.status_code == 200:
             data = response.json()
-            print("data time", data)
+            #print("data time", data)
             return {
                 "uuid": data.get("player_id"),
                 "title": data.get("title")
@@ -36,12 +36,12 @@ def fetch_profile(username):
         return None
 
 
-counter = 0
-# Main loop
+#counter = 0
+
 for i, username in enumerate(usernames):
-    counter += 1
-    if counter > 5:
-        break
+    #counter += 1
+    #if counter > 5:
+    #    break
 
     profile = fetch_profile(username)
     if profile:
@@ -53,11 +53,7 @@ for i, username in enumerate(usernames):
         except Exception as e:
             print(f"❌ Error inserting for {username}: {e}")
 
-    # Respect API rate limit
-    time.sleep(0)
-
-    # Optional: feedback every 100
-    if i % 10 == 0:
+    if i % 100 == 0:
         print(f"✅ Processed {i} players...")
 
 # Commit once at the end
