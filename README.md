@@ -105,7 +105,8 @@ Postgres' advantages are only relevant when there's multiple consumers attacking
 ## A. Notation For Board Positions
 The code uses "FEN", which is "Forsyth–Edwards Notation" for chess positions. I thought maybe the computer would use a matrix to show an 8x8 grid and then tack on a binary marker for whose turn it is. There has to be something that tracks en-passant eligibility, castling status/rights https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation
 
-
+## B. Using Two Data Structures At Once for BFS
+When I was populating the table of plaeyrs, I wanted to plant 5 seeds and gain diversity through a BFS, not DFS. Outside of LeetCode this was my first Breadth-First Search. If I used a queue (FIFO), I could get the ordering I wanted for which players to search, but every time I ran into a duplicate name, I'd have to search the whole queue again to avoid double-touching. I then considered using a stack, which would have faster lookups, but wouldn't have the ordering I needed. What I hadn't considered until this project was using BOTH at the same time.
 
 
 

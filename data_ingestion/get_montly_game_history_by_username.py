@@ -1,33 +1,28 @@
-# data_ingestion/get_games_july2025.py
-
 import requests
-import json
 
-username = "magnuscarlsen"
-month_url = f"https://api.chess.com/pub/player/{username}/games/2025/07"
-headers = {"User-Agent": "chess-insights-dev"}
+def fetch_games_for_month(username, year, month):
+    url = f"https://api.chess.com/pub/player/{username}/games/{year}/{month:02d}"
+    headers = {"User-Agent": "chess-insights-dev"}
 
-resp = requests.get(month_url, headers=headers)
+    chess_api_response = requests.get(url, headers=headers)
 
-if resp.status_code == 200:
-    data = resp.json()
-    games = data.get("games", [])
-
-    # Save raw output
-    with open(f"{username}_games_2025_07.json", "w") as f:
-        json.dump(games, f, indent=2)
-
-    print(f"✅ Saved {len(games)} games for {username} in July 2025.")
-else:
-    print(f"❌ Error {resp.status_code}: {resp.text}")
+    if chess_api_response.status_code == 200:
+        data = chess_api_response.json()
+        games_archive = data.get("games", [])
+        print(f"✅ Pulled {len(games_archive)} games for {username} ({year}-{month:02d})")
+        return games_archive
+    else:
+        print(f"❌ Error fetching games for {username}: {chess_api_response.status_code}")
+        return None
 
 
 
-### SAMPLE API REQUEST
+
+''' SAMPLE API REQUEST
 https://api.chess.com/pub/player/magnuscarlsen/games/2025/07"
-###
 
-### SAMPLE SUBSET OF THE JSON RESPONSE, REPRESENTING 1 OF MANY GAMES ####
+
+SAMPLE SUBSET OF THE JSON RESPONSE, REPRESENTING 1 OF MANY GAMES ####
 
 {
     "url": "https://www.chess.com/game/live/145713572945",
@@ -63,4 +58,4 @@ https://api.chess.com/pub/player/magnuscarlsen/games/2025/07"
     "tournament": "https://api.chess.com/pub/tournament/late-titled-tuesday-blitz-july-01-2025-5764807"
   }
 
-###
+'''
