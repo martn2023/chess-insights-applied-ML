@@ -109,6 +109,8 @@ The code uses "FEN", which is "Forsyth–Edwards Notation" for chess positions. 
 When I was populating the table of plaeyrs, I wanted to plant 5 seeds and gain diversity through a BFS, not DFS. Outside of LeetCode this was my first Breadth-First Search. If I used a queue (FIFO), I could get the ordering I wanted for which players to search, but every time I ran into a duplicate name, I'd have to search the whole queue again to avoid double-touching. I then considered using a stack, which would have faster lookups, but wouldn't have the ordering I needed. What I hadn't considered until this project was using BOTH at the same time.
 
 
+## C. API Pulls May Require Headers
+I was blocked on one of my data pull scripts until I put a header in
 
 # V. Quick-Start Guide
 
