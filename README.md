@@ -102,6 +102,12 @@ Inside a SQLite database
 Postgres' advantages are only relevant when there's multiple consumers attacking this or multiple team members working on this at once. While I'm eager to level up my engineering skills, picking Postgres for **this project feels like "Engineering Theater"**.
 
 # IV. Major Learnings
+## A. Notation For Board Positions
+The code uses "FEN", which is "Forsyth–Edwards Notation" for chess positions. I thought maybe the computer would use a matrix to show an 8x8 grid and then tack on a binary marker for whose turn it is. There has to be something that tracks en-passant eligibility, castling status/rights https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation
+
+
+
+
 
 # V. Quick-Start Guide
 

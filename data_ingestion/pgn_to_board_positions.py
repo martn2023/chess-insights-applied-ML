@@ -1,28 +1,45 @@
-# parse_pgn_positions.py
-
-import json
+import re
 import chess.pgn
+from io import StringIO
 
-# Input & Output paths
-INPUT_JSON = "magnuscarlsen_games_2025_07.json"
+def clean_pgn(raw_pgn: str) -> str:
+    """
+    Removes annotations (clock times, comments) from PGN string.
+    Keeps all headers and moves intact.
+    """
+    no_comments = re.sub(r"\{[^}]*\}", "", raw_pgn)
+    clean_lines = [line.strip() for line in no_comments.splitlines()]
+    return "\n".join(clean_lines)
 
-# Load the games JSON (already pulled from Chess.com)
-with open(INPUT_JSON, "r") as f:
-    games = json.load(f)
-
-for game in games:
-    pgn_text = game.get("pgn")
-    if not pgn_text:
-        continue
-
-    # Use python-chess PGN parser
-    pgn_io = chess.pgn.read_game(io.StringIO(pgn_text))
-
-    # Start from initial board
-    board = pgn_io.board()
-
-    print(f"Game: {game['url']}")
-    for move_num, move in enumerate(pgn_io.mainline_moves(), start=1):
+def pgn_to_fens(pgn_str: str) -> list:
+    """
+    Converts PGN string into a list of (move_number, FEN) tuples.
+    """
+    game = chess.pgn.read_game(StringIO(pgn_str))
+    board = game.board()
+    fens = []
+    move_number = 1
+    for move in game.mainline_moves():
         board.push(move)
-        print(f"Move {move_num}: {board.san(move)}")
-        print(board)  # ASCII board representation
+        fens.append((move_number, board.fen()))
+        move_number += 1
+    return fens
+
+# --- Example usage starting from JSON ---
+# Pretend this is the Chess.com API response (Python dict after json.loads)
+sample_game_json = {
+    "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2025.07.01\"]\n[Round \"-\"]\n"
+           "[White \"MagnusCarlsen\"]\n[Black \"KnightOclock\"]\n[Result \"1-0\"]\n"
+           "1. d4 {[%clk 0:02:55.4]} 1... Nf6 {[%clk 0:02:58.5]} 2. c3 {[%clk 0:02:56.2]}\n"
+}
+
+#this is still too dirty for chess engine to interpret because it has timestamps and funny use of periods to denote which player to act
+pgn_with_time_stamps = sample_game_json["pgn"]
+
+cleaned_pgn = clean_pgn(pgn_with_time_stamps)
+
+fens_positions_list = pgn_to_fens(cleaned_pgn)
+
+print("First 3 FENs:")
+for move, fen in fens_positions_list[:3]:
+    print(f"Move {move}: {fen}")
