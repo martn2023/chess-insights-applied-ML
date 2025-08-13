@@ -9,11 +9,11 @@ response = requests.get(url, headers=headers)
 print(response.status_code)
 print(response.text)
 
-###
----ACCESSING:
-https://api.chess.com/pub/player/magnuscarlsen
+'''
 
----GOT US THIS:
+ACCESSING: https://api.chess.com/pub/player/magnuscarlsen
+
+GIVES US:
 
 {
   "avatar": "...",
@@ -35,4 +35,4 @@ https://api.chess.com/pub/player/magnuscarlsen
   "streaming_platforms": []
 }
 
-###
+'''
