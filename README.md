@@ -85,8 +85,9 @@ Inside a SQLite database
 - castling status
 
 ### 4. Statistical Modeling
-
+**Placeholder**, as the analysis can only come after data is processed
 ### 5. Insights
+**Placeholder**, as the insights can only come after a formal and varied analysis
 
 # III. Tradeoffs and Rationale
 ## A. SQLite vs. Postgres
@@ -115,7 +116,7 @@ The first example would be calculating the name of a match winner.
 - Someone might argue this is redundant because it could 100% be calculated with known fields later on in different analysis.
 - From a signaling and credibility standpoint, this is the "safer" route because experienced engineers generally try to avoid pre-computing until proven necessary (runtime fears)
 
-
+I went for the pre-computing route in the interest of expediency
 
 # IV. Major Learnings
 ## A. Notation For Board Positions
@@ -131,16 +132,19 @@ When I was populating the table of plaeyrs, I wanted to plant 5 seeds and gain d
 ## C. API Pulls May Require Headers
 I was blocked on one of my data pull scripts until I put a header in
 
-## C. Teachable Moment About Not Segregating Out A Function That Looks Up Player Profile Details
+## D. Teachable Moment About Not Segregating Out A Function That Looks Up Player Profile Details
 I made a rookie mistake of having one consolidated function that looks up a player's opponent history and then logs those names into a "players" database table. My strategy was to build the list of players first, then pull a handful of games from each player.
 
 This was fundamentally incomplete because I forgot that there would be situations later where I would run into opponent usernames I had never encountered/recorded in the "players" table. Without a corresponding player record, we couldn't do foreign keys in the "matches" table.
 
 I could have backpedaled and have rewritten this, to appear less chaotic. In the interest of keeping momentum and practicing iterative triage work seen in real life, I elected a Band-Aid strategy: record the names of players in the **matches** table without a foreign key, then write a corrective script to fill out the missing player details in the **players* table after the match data has been pulled.
 
+## E. Dangers of Using SQLite
+My logic was that SQLite was low-risk because the file size would be small, not realizing that it can still be vulnerable during interrupted state transitions. But why would I expect that for such a low level of required processing power and memory, right? As if fate wanted to teach me a lesson, the system crashed and corrupted my database and I was only able to save 8 hours of API retrievals by pulling a fresh backup from GitHub.
+  
 
 # V. Quick-Start Guide
-- Clone do your device
+- Clone onto your device
 - pip install -r requirements.txt, to install libraries
 - Run the scripts in the 1_database_creation folder to
     - initialize an empty database
