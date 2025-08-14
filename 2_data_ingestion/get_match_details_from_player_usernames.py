@@ -133,10 +133,11 @@ def populate_some_matches(usernames_list):
 
         if countdown % 1000 == 0:
             conn.commit()
+            print(f"committed {countdown} remaining")
             # hesitant to place this outside of the loop because I wanted to save after every row, but compromised to do every 1000 rows in a 50K run
 
         countdown -= 1
-        print("usernames remaining", countdown)
+        #print("usernames remaining", countdown)
 
         #print("first match", monthly_match_archive[0])
         # temporary breakage to avoid overkill during testing
