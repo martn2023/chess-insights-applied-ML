@@ -20,7 +20,7 @@ seed_players_list = [
 archive_year = 2025
 archive_month = 7
 
-initial_pull_per_seed = 50000
+initial_pull_per_seed = 50000 # this is how I got 50,008 records
 
 from collections import deque
 
@@ -55,7 +55,7 @@ def bfs_player_crawl(seed_players, year, month, max_players):
                 opponents_set.add(b if w == current_player else w)
 
         #print("opponents_set found", opponents_set)
-        # Enqueue new opponents_set
+        # add someone in back of the queue
         for opp in opponents_set:
             if opp not in players_seen_set:
                 queue.append(opp)
