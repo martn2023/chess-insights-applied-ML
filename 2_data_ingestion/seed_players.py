@@ -1,4 +1,4 @@
-from get_montly_game_history_by_username import fetch_games_for_month
+from get_monthly_game_history_by_username import fetch_games_for_month
 import sqlite3
 import os
 
