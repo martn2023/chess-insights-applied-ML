@@ -131,7 +131,9 @@ def populate_some_matches(usernames_list):
                     WHERE game_id = ?
                 """, (cleaned_pgn, game_id))
 
-            conn.commit()  # hesistant to place this outside of the loop
+        if countdown % 1000 == 0:
+            conn.commit()
+            # hesitant to place this outside of the loop because I wanted to save after every row, but compromised to do every 1000 rows in a 50K run
 
         countdown -= 1
         print("usernames remaining", countdown)
